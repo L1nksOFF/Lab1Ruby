@@ -176,3 +176,186 @@ state = gets.chomp
 state.upcase!
 
 puts "Your name is #{first_name} #{last_name} and you are from #{city}, #{state}!"
+
+
+
+Розділ control-flow-in-ruby
+
+1. Check out the code in the editor. There’s some new syntax there, but we’ll bet you can guess what it does. Click Run to see the program in action! (Go ahead and give Ruby an integer—that is, a positive or negative number with no decimal bit.)
+
+print "Integer please: "
+user_num = Integer(gets.chomp)
+
+if user_num < 0
+  puts "You picked a negative integer!"
+elsif user_num > 0
+  puts "You picked a positive integer!"
+else
+  puts "You picked zero!"
+end
+
+2. Write your own if statement in the editor. It can take any expression you want (even just true!), but it should evaluate to true. When it does, it should print a string of your choice to the console (using print or puts).
+
+if 2 > 1
+  print "WOW"
+end
+
+3. Try it yourself in the editor! Use any expression you like in your if/else statement, but make sure both branches print a string of your choice to the console.
+
+if 1>2
+    print "WOW"
+else
+    print "NOT WOW"
+end
+
+4. Add an elsif block to your if/else statement in the editor.
+
+if 1>2
+    print "WOW"
+elsif 2>3
+    print "WOW X2"
+else
+    print "NOT WOW"
+end
+
+5. We’ve started you off in the editor. Replace the ___s with the correct unless statement code so your program prints out "I'm writing Ruby programs!"
+
+hungry = false
+
+unless hungry
+  puts "I'm writing Ruby programs!"
+else
+  puts "Time to eat!"
+end
+
+6. We’ve got two variables in the editor: is_true and is_false. Replace the __ with == or != to make is_true evaluate to true and is_false evaluate to false.
+
+is_true = 2 != 3
+
+is_false = 2 == 3
+
+7. We’ve set up a few variables in the editor. We want them all to evaluate to true. Your job: replace the __s with <, <=, >, or >= to make the expression for each variable true!
+
+test_1 = 17 > 16
+
+test_2 = 21 < 30
+
+test_3 = 9 <= 9
+
+test_4 = -11 <= 4
+
+8. For this round, we’ll show you the comparators and you set each variable to true or false depending on what value you expect the expression to return. Remember: no quotes around true and false!
+
+# test_1 = 77 != 77
+test_1 = false
+
+# test_2 = -4 <= -4
+test_2 = true
+
+# test_3 = -44 < -33
+test_3 = true
+
+# test_4 = 100 == 1000
+test_4 = false
+
+9. Let’s practice a bit with &&. Check out the boolean expressions and set each variable to true or false depending on what value you expect the expression to return.
+
+# boolean_1 = 77 < 78 && 77 < 77
+boolean_1 = false
+
+# boolean_2 = true && 100 >= 100
+boolean_2 = true
+
+# boolean_3 = 2**3 == 8 && 3**2 == 9
+boolean_3 = true
+
+10.Set each variable to true or false depending on what value you expect the expression to return.
+
+# boolean_1 = 2**3 != 3**2 || true
+boolean_1 = true
+
+# boolean_2 = false || -10 > -9
+boolean_2 = false
+
+# boolean_3 = false || false
+boolean_3 = false
+
+11. Set each variable to true or false depending on what value you expect the expression to return.
+
+# boolean_1 = !true
+boolean_1 = false
+
+# boolean_2 = !true && !true
+boolean_2 = false
+
+# boolean_3 = !(700 / 10 == 70)
+boolean_3 = false
+
+12. Last one! Set each variable to true or false depending on what value you expect the expression to return.
+
+# boolean_1 = (3 < 4 || false) && (false || true)
+boolean_1 = true
+
+# boolean_2 = !true && (!true || 100 != 5**2)
+boolean_2 = false
+
+# boolean_3 = true || !(true || false)
+boolean_3 = true
+
+13. Create an if/else statement in the editor. Make sure to include at least one elsif. Each branch of the statement should print something to the console.
+
+a = 10
+b = 11
+if a < b
+  print "a is less than b!"
+elsif b < a
+  print "b is less than a!"
+else
+  print "b is equal to a!"
+end
+
+14. Create an unless statement in the editor. The statement should print something to the console.
+
+unless false
+puts "wow"
+end
+
+15. We’re letting you know what value (true or false) we want each variable to have, and your job is to add an expression that evaluates to the correct value using comparators.
+
+# test_1 should be false
+test_1 = 5 >= 10
+
+# test_2 = should be false
+test_2 = 4 > 5
+
+# test_3 = should be true
+test_3 = 2 > 1
+
+16. The code in the editor indicates what value (true or false) we want each variable to have, and your job is to add an expression that evaluates to the correct value using boolean operators (&&, ||, or !).
+
+( 1 == 1 ) && ( 2 == 2 )  # true
+( 1 == 2 ) || ( 2 == 2 ) # true
+!( false ) # true
+
+
+
+
+Розділ thith-meanth-war
+
+1. Click Run to see the Daffy Duckifier in action and to start building your own!
+
+print "Thtring, pleathe!: "
+user_input = gets.chomp
+user_input.downcase!
+
+if user_input.include? "s"
+  user_input.gsub!(/s/, "th")
+else
+  puts "Nothing to do here!"
+end
+  
+puts "Your string is: #{user_input}"
+
+2. Use print to ask the user for input.
+Declare a variable called user_input and set it equal to the user’s input using gets.chomp.
+
