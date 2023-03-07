@@ -359,3 +359,437 @@ puts "Your string is: #{user_input}"
 2. Use print to ask the user for input.
 Declare a variable called user_input and set it equal to the user’s input using gets.chomp.
 
+print "What is your name?"
+user_input = gets.chomp
+
+3. Call the .downcase! method on user_input. Make sure to include the ! so that the user’s string is modified in-place; otherwise, Ruby will create a copy of user_input and modify that instead.
+
+print "What is your name?"
+user_input = gets.chomp.downcase!
+
+4. We want to check user_input for the substring "s".
+
+Write an if statement in the editor. It should check to see if user_input includes "s".
+
+For now, print a string of your choice to the console if it finds "s".
+
+After running the code, make sure to enter a string in the terminal.
+
+print "What is your name?"
+user_input = gets.chomp
+user_input.downcase!
+
+if user_input.include? "s"
+end
+
+5. Remove the print statement you added to your if statement and replace it with a call to .gsub! on user_input. Have it replace /s/ with "th".
+
+After pressing Run, enter a message in the console and hit enter to check your code!
+
+print "What is your name?"
+user_input = gets.chomp
+user_input.downcase!
+
+if user_input.include? "s"
+user_input.gsub!(/s/, "th")
+end
+
+6. Add an else statement that displays a string to the user to let them know if there are no “s”s in their string.
+
+print "What is your name?"
+user_input = gets.chomp
+user_input.downcase!
+
+if user_input.include? "s"
+user_input.gsub!(/s/, "th")
+else
+    puts "S not found"
+end
+
+7. Add a puts statement that uses string interpolation to show the user their transformed string.
+
+print "What is your name?"
+user_input = gets.chomp
+user_input.downcase!
+
+if user_input.include? "s"
+user_input.gsub!(/s/, "th")
+else
+    puts "S not found"
+end
+
+8. Enough pondering for now. When you’re ready, click Run to complete this project.
+
+print "What is your name?"
+user_input = gets.chomp
+user_input.downcase!
+
+if user_input.include? "s"
+user_input.gsub!(/s/, "th")
+else
+    puts "S not found"
+end
+
+
+
+Розділ the-while-loop
+
+1. The while loop in the editor is currently an infinite loop. Correct it so it will end! (Be careful—if you click Run right away, you’ll start the infinite loop and you’ll have to refresh the page.)
+
+i = 0
+while i < 5
+  puts i
+  # Add your code here!
+    i = i + 1
+end
+
+2. On line 2, fill in the __ blank so that the loop breaks when counter is greater than 10.
+
+On line 5, increment counter like we do in the example above.
+
+counter = 1
+until counter == 11
+  puts counter
+  # Add code to update 'counter' here!
+    counter += 1
+end
+
+3. The loop from the first exercise is in the editor. Rewrite it using the appropriate assignment operator.
+
+counter = 1
+while counter < 11
+  puts counter
+  counter += 1
+end
+
+4. Update the for loop in the editor in two ways:
+
+Make it print the numbers 1 to 15, including 15.
+Change it to use .. instead of ....
+
+for num in 1..15
+  puts num
+end
+
+5. Write a for loop that puts the numbers 1 to 20, including 20, using either .. or .... Check Hint if you need a syntax refresher.
+
+for num in 1..20
+  puts num
+end
+
+6. Replace the ___s in the editor with the appropriate keywords. Check the Hint if you need help!
+
+i = 20
+loop do
+  i -= 1
+  print "#{i}"
+  break if i <= 0
+end
+
+7. Add a line to your loop before your print statement. Use the next keyword so that you skip to the next iteration if the number i is odd.
+
+Use the example above for help, but remember that the example above skips even numbers.
+
+i = 20
+loop do
+  i -= 1
+  next if i % 2 == 1
+  print "#{i}"
+  break if i <= 0
+end
+
+8. Create a variable called my_array and set it equal to the numbers 1 through 5, inclusive, in order.
+
+my_array = [1, 2, 3, 4, 5]
+
+9. Use the .each method on the odds array to print out double the value of each item of the array. In other words, multiply each item by 2.Make sure to use print rather than puts, so your output appears on one line.
+
+Check the Hint if you get stuck!
+
+odds = [1,3,5,7,9]
+
+# Add your code below!
+
+odds.each do |item|
+item *= 2
+print item
+end
+
+10. Use the .times operator to print out a string of your choice any number of times you like. Use the code in the text above as a guide if you need help.
+
+90.times { print "hi" }
+
+11. Use a while loop to print out the numbers 1 through 50, inclusive. While the example above counts down, you will want to count up.Use print rather than puts, and don’t forget to increment your variable.
+
+i = 1
+while i <= 50
+  print i
+  i += 1
+end
+
+12. Now rewrite your while loop using until. You still want to print out the numbers 1 through 50, inclusive.
+
+i = 1
+until i == 51
+  print i
+  i += 1
+end
+
+13. Now print out the numbers from 1 to 50 inclusive, using a for loop instead of an until loop.
+
+i = 1
+for i in  1..50 
+  print i
+  i += 1
+end
+
+14. Use the loop iterator to print out the string "Ruby!" 30 times.
+
+Make sure to type the string exactly as shown!
+
+i = 0
+loop do
+  print "Ruby!"
+  i += 1
+  break if i == 30
+end
+
+15. Use the .times iterator to print "Ruby!" to the console 30 times. Hit Run to see the majesty of your code and complete this lesson!
+
+30.times { print "Ruby!" }
+
+
+
+Розділ redacted
+
+1. Use puts to prompt the user for input two times. For the first puts, declare a variable called text and set it equal to the user’s input via gets.chomp.
+
+For the second puts, declare a variable called redact and set it equal to the user’s input using gets.chomp.
+
+Note: When running code that includes gets, remember to give input for the terminal. When it expects input but never receives it an error will be displayed after some time. This prevents it from running indefinitely.
+
+puts "Enter text: "
+text = gets.chomp
+
+puts "Enter text: "
+redact = gets.chomp
+
+2. Declare a variable called words and set it equal to the result of calling the .split method on text. Pass .split a space (" ") to use as a delimiter so that we get an array made up of the words from text.
+
+When running the code, be sure to enter text and words to redact in the console!
+
+puts "Enter text: "
+text = gets.chomp
+
+puts "Enter text: "
+redact = gets.chomp
+
+words = text.split(" ")
+
+3. Let’s start simple: write an .each loop that iterates through words and just prints out each word it finds.
+
+puts "Enter text: "
+text = gets.chomp
+
+puts "Enter text: "
+redact = gets.chomp
+
+words = text.split(" ")
+
+words.each do |i|
+    print i
+end
+
+4. Add an if/else statement inside your .each.
+
+if the current word equals the word to be redacted, then print "REDACTED " with that extra space.
+Otherwise (else), print word + " ".
+The extra space in both cases prevents the words from running together.
+
+puts "Enter text: "
+text = gets.chomp
+
+puts "Enter text: "
+redact = gets.chomp
+
+words = text.split(" ")
+
+words.each do |i|
+    if i != redact
+    print i + " "
+else
+    print "REDACTED "
+  end
+end
+
+
+
+Розділ ruby-data-structures
+
+1. Declare a variable, my_array, in the editor, and set it equal to an array of your choice. Check the Hint if you need a syntax refresher.
+
+my_array = [1, 3, 5, 7]
+
+2. Use square bracket notation to print the third value of demo_array to the console.
+
+Remember that the third value is at index 2, not at index 3. We start counting indices from zero.
+
+demo_array = [100, 200, 300, 400, 500]
+
+print demo_array[2]  # Add your code here!
+
+3. Create a new array called string_array. Make it an array of… strings!
+
+string_array = ["aaa", "aaa", "aaa"]
+
+4. Create your own two-dimensional array called my_2d_array in the editor. The elements of the inner array(s) can be anything you like: numbers, strings, booleans, and so on. Check the Hint if you need help.
+
+my_2d_array = [[1, 2, 3, 4, 5], ["aaa", "aaa", "aaa"], [true, false]]
+
+5. Use Hash.new to create a new hash called pets. Hash must be capitalized, or Ruby won’t know what you’re talking about!
+
+pets = Hash.new
+
+6. Add a pet to your pets hash. It can be any key-value pair you like!
+
+pets = Hash.new
+pets["Murchik"] = "cat"
+
+7. Access the key-value pair you added to pets, just like step 2 in the example above.
+
+Use puts to print that value to the console.
+
+pets = Hash.new
+pets["Murchik"] = "cat"
+puts pets["Murchik"]
+
+8. Use the .each iterator to puts out each element of the languages array.
+
+Make sure to use puts instead of print, so each element is on its own line.
+
+languages = ["HTML", "CSS", "JavaScript", "Python", "Ruby"]
+
+languages.each { |element| puts element }
+
+9. Puts out every element inside the sub-arrays inside s.
+
+Iterate through .each element in the s array. Call the elements sub_array.
+Then iterate through .each sub_array and puts out their items.
+
+s = [["ham", "swiss"], ["turkey", "cheddar"], ["roast beef", "gruyere"]]
+
+s.each { |sub_array| sub_array.each { |element| puts element }}
+
+10. Use .each to iterate over the secret_identities hash.
+
+Use puts to print each key-value pair, separated by a colon and a space (:), to the console, just like the example above.
+
+secret_identities = {
+  "The Batman" => "Bruce Wayne",
+  "Superman" => "Clark Kent",
+  "Wonder Woman" => "Diana Prince",
+  "Freakazoid" => "Dexter Douglas"
+}
+  
+secret_identities.each do |nick, name|
+  puts "#{nick}: #{name}"
+end
+
+11. Create your own multidimensional array called my_array in the editor. The elements of the innermost array can be anything you like: numbers, strings, booleans, and so on. Check the Hint if you need help.
+
+my_array = [[1, 2, 3, 4, 5], ["a", "a", "a"], [false, true]]
+
+12. Create a hash called my_hash in the editor.
+
+Give it at least one key-value pair.
+
+my_hash = { 
+  "a" => 1,
+}
+
+13. Iterate through .each key/value pair in lunch_order.
+
+Please puts out the value of each pair (just the value, not the key).
+
+lunch_order = {
+  "Ryan" => "wonton soup",
+  "Eric" => "hamburger",
+  "Jimmy" => "sandwich",
+  "Sasha" => "salad",
+  "Cole" => "taco"
+}
+
+lunch_order.each { |name, nfood| puts nfood }
+
+
+
+Розділ create-a-histogram
+
+1. Use a puts statement to prompt the user for input. Use gets.chomp to save this input to a variable called text.
+
+puts "Text please: "
+text = gets.chomp
+
+2. Declare a variable called words and set it equal to the result of calling .split on text.
+
+puts "Text please: "
+text = gets.chomp
+words = text.split(" ")
+
+3. Create a hash called frequencies in the editor.
+
+Give it a default value of 0.
+
+After pressing Run, enter a message in the console and hit enter to check your code!
+
+puts "Text please: "
+text = gets.chomp
+words = text.split(" ")
+frequencies = Hash.new(0)
+
+4. Use .each to iterate over the words array.
+
+For each word we find, assume that the word itself is a key in frequencies and increment its value by 1.
+
+This is why our default is 0. The first time we find the word, it will have a default value of 0 that we can increment by 1.
+
+Take a look at the Hint if you need help.
+
+puts "Text please: "
+text = gets.chomp
+words = text.split(" ")
+frequencies = Hash.new(0)
+words.each { |word| frequencies[word] += 1 }
+
+5. Use .sort_by to sort the frequencies hash by word count, like step 2 above. Store the result back in frequencies.
+
+Use .reverse! to reverse the sorted frequencies array.
+
+Check the Hint for more details!
+
+puts "Text please: "
+text = gets.chomp
+words = text.split(" ")
+frequencies = Hash.new(0)
+words.each { |word| frequencies[word] += 1 }
+frequencies = frequencies.sort_by {|a, b| b }
+
+6. Iterate over .each key/value pair in the frequencies hash.
+
+Then, puts each word, a single space, and its frequency to the console, like in the example above.
+
+puts "Text please: "
+text = gets.chomp
+words = text.split(" ")
+frequencies = Hash.new(0)
+words.each { |word| frequencies[word] += 1 }
+
+frequencies = frequencies.sort_by do |word, count|
+  count
+end
+
+frequencies.reverse!
+
+frequencies.each do |word, count|
+  puts word + " " + count.to_s
+end
