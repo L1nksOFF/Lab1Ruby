@@ -793,3 +793,43 @@ frequencies.reverse!
 frequencies.each do |word, count|
   puts word + " " + count.to_s
 end
+
+
+
+Розділ methods-blocks-sorting
+
+1. We’ve started a method in the editor to the right, but it’s incomplete. Replace the ___s with the correct keywords so the method will work!
+
+def puts_1_to_10
+  (1..10).each { |i| puts i }
+end
+
+puts_1_to_10 # Ignore this for now. We'll explain it soon!
+
+2. Create a method, greeting, in the editor. It should use puts to print a greeting to the console.
+
+# Define your method below!
+
+def greeting
+# Define your method above this line.
+  puts "greeting"
+end
+
+greeting # Ignore this for now. We'll explain
+         # it in the next exercise!
+         
+3. We’ve set up a function, array_of_10, in the editor to the right. Call it on line 5!
+
+def array_of_10
+  puts (1..10).to_a
+end
+
+4. Call the cubertino method in the editor, passing it an argument of 8.
+
+def cubertino(n)
+  puts n ** 3
+end
+
+cubertino(8)
+
+5. 
