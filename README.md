@@ -832,4 +832,334 @@ end
 
 cubertino(8)
 
-5. 
+5. Define a new method called add that takes two numbers as parameters.
+Inside the method, return the sum of those numbers.
+
+def add(x, y)
+  return x + y
+end
+
+6. Define a method called greeter that takes a single string parameter, name, and returns a string containing that person’s name.
+Make sure to return the string. Don’t use print or puts.
+
+Define a by_three? method that takes a single integer parameter, number, and returns true if that number is evenly divisible by three and false if not.
+
+def greeter(name)
+  return "Hey, #{name}!"
+end
+
+def by_three?(number)
+  if number % 3 == 0
+    return true
+  else
+    return false
+  end
+end
+
+7. Currently, the second .each will print out 5 five times (since it will print 5 for each item in the array, and there are five items). Modify the block so it will print each item in the array multiplied by five.
+
+# The block, {|i| puts i}, is passed the current
+# array item each time it is evaluated. This block
+# prints the item. 
+[1, 2, 3, 4, 5].each { |i| puts i }
+
+# This block prints the number 5 for each item.
+# (It chooses to ignore the passed item, which is allowed.)
+[1, 2, 3, 4, 5].each { |i| puts 5*i }
+
+8. Use the .sort! method to sort the values in my_array. Magic, isn’t it?
+
+Display my_array in the console.
+
+my_array = [3, 4, 8, 7, 1, 6, 5, 9, 2]
+
+# Call the sort! method on my_array below.
+# my_array should then equal [1, 2, 3, 4, 5, 6, 7, 8, 9].
+
+my_array.sort!
+puts my_array
+
+9. What Ruby method could we call on books in order to sort the list of books alphabetically? Try it out in the editor.
+
+# library sorting code
+books = ["Charlie and the Chocolate Factory", "War and Peace", "Utopia", "A Brief History of Time", "A Wrinkle in Time"]
+
+# How might we sort! the books in alphabetical order? (Hint, hint)
+
+books.sort!
+puts books
+
+10. Use the combined comparison operator to compare book_1 to book_2 (in that order). Before you run the code, think about what the result will be.
+
+book_1 = "BOOK1"
+
+book_2 = "BOOK2"
+
+book_1 <=> book_2
+
+11. Sort your books in descending order on line 8. Use the example of sorting in ascending order on line 4 as a guide.
+
+Display the result in the console.
+
+books = ["Charlie and the Chocolate Factory", "War and Peace", "Utopia", "A Brief History of Time", "A Wrinkle in Time"]
+
+# To sort our books in ascending order, in-place
+books.sort! { |firstBook, secondBook| firstBook <=> secondBook }
+
+# Sort your books in descending order, in-place below
+
+books.sort! { |firstBook, secondBook| secondBook <=> firstBook }
+
+12. Create a method, welcome, that puts “Welcome to Ruby!” After defining your method, call it.
+
+def welcome
+  puts "Welcome to Ruby!"
+end
+
+welcome
+
+13.Change your welcome method definition. Add a single string parameter called name.
+
+Remove your puts statement and replace it with return "Hello, #{name}"
+
+def welcome(name)
+  return "Hello, #{name}!"
+end
+
+welcome("NAME")
+
+14. def welcome(name)
+  return "Hello, #{name}!"
+end
+
+welcome("NAME")
+
+15. Add a block after .each that multiplies each item by itself and puts the result to the console.
+
+my_array = [1, 2, 3, 4, 5]
+
+my_array.each do |num|
+  puts num * num
+end
+
+16. Use .sort! to sort the fruits array in descending (that is, reverse) alphabetical order. You can use the combined comparison operator (like the example above) or an if/elsif/else statement.
+
+fruits = ["orange", "apple", "banana", "pear", "grapes"]
+
+fruits.sort! do |fruitOne, fruitTwo| 
+  fruitTwo <=> fruitOne
+end
+
+
+
+Розділ ordering-your-library
+
+1. The code in the editor should look familiar—there’s only one new idea (on line 1). When you’re ready, click Run to execute the code and start building your own method.
+
+def alphabetize(arr, rev=false)
+  if rev
+    arr.sort { |item1, item2| item2 <=> item1 }
+  else
+    arr.sort { |item1, item2| item1 <=> item2 }
+  end
+end
+
+books = ["Heart of Darkness", "Code Complete", "The Lorax", "The Prophet", "Absalom, Absalom!"]
+
+puts "A-Z: #{alphabetize(books)}"
+puts "Z-A: #{alphabetize(books, true)}"
+
+2. Define alphabetize in the editor to the right. It shouldn’t take any arguments yet, and there doesn’t need to be anything in the body of the method.
+
+def alphabetize
+end
+
+3. Update your alphabetize method with two parameters: arr, representing the array to be passed in, and rev, a boolean that defaults to false.
+
+def alphabetize(arr, rev = false)
+end
+
+4. Inside your method, add a line that calls .sort! on the arr array. Since it is the last line of the method, the sorted array will be returned.
+
+Now test your work! After your method, make a new array called numbers that contains a few numbers like the example above.
+
+Call your alphabetize method with your numbers array as the parameter and puts the result to the console.
+
+def alphabetize(arr, rev = false)
+  arr.sort!
+end
+
+numbers = [3, 5, 1, 6]
+
+puts alphabetize(numbers)
+
+5. After your .sort! call, add an if-else statement. If rev is true, call reverse! on arr, else return arr.
+
+Keep your numbers array and the puts statement so that you can see your work in action!
+
+def alphabetize(arr, rev = false)
+  arr.sort!
+  if rev == true
+    arr.reverse!
+  else
+  	arr
+  end
+end
+
+numbers = [3, 5, 1, 6]
+
+puts alphabetize(numbers)
+
+
+
+Розділ hashes-and-symbols
+
+1. Create a hash called my_hash using whichever method you prefer.
+
+my_hash = { "a" => 1,
+  					"b" => 2
+}
+
+2. Iterate over the matz hash and print each value to the console using puts.
+
+matz = { "First name" => "Yukihiro",
+  "Last name" => "Matsumoto",
+  "Age" => 47,
+  "Nationality" => "Japanese",
+  "Nickname" => "Matz"
+}
+
+matz.each do |key, value|
+  puts value
+end
+
+3. Go ahead and try to access a key in creatures that doesn’t exist.
+
+creatures = { "weasels" => 0,
+  "puppies" => 6,
+  "platypuses" => 3,
+  "canaries" => 1,
+  "Heffalumps" => 7,
+  "Tiggers" => 1
+}
+
+creatures["birds"]
+
+4. In the meantime, create a hash called no_nil_hash and give it any default value other than nil.
+
+no_nil_hash = Hash.new("Never nil!")
+
+5. All right! Time to create your first symbol. Create a regular old variable called my_first_symbol and set it equal to any valid symbol you like!
+
+# Write your code below!
+
+my_first_symbol = :my_symbol
+
+6. Add at least two more keys to the symbol_hash hash replacing the ______ blanks.
+
+The keys should all be symbols; their associated values can be anything you like.
+
+symbol_hash = {
+  :one => 1,
+  :two => 2,    # Fill in these two blanks!
+  :three => 3,
+}
+
+7. We have an array of strings we’d like to later use as hash keys, but we’d rather they be symbols.
+
+Create a new variable, symbols, and store an empty array in it.
+Use .each to iterate over the strings array.
+For each s in strings, use .to_sym to convert s to a symbol and use .push to add that new symbol to symbols.
+Print the symbols array.
+Check the hint for a more information on how to use .each and .push.
+
+strings = ["HTML", "CSS", "JavaScript", "Python", "Ruby"]
+symbols = []
+
+strings.each do |s| 
+ symbols.push(s.to_sym)
+end 
+print symbols
+
+8. Update your code from the last exercise to use .intern instead of .to_sym.
+
+strings = ["HTML", "CSS", "JavaScript", "Python", "Ruby"]
+symbols = []
+
+strings.each do |s| 
+ symbols.push(s.intern)
+end 
+print symbols
+
+9. Create a hash called movies with symbols as keys and strings as values.
+
+Inside your hash, add two key/value pairs.
+
+The keys should be the names of movies.
+
+The values should be quick descriptions or reviews.
+
+Check out the Hint if you want an example to get you started!
+
+movies = {
+  :children => "Moana",
+  :scifi => "Mortal Kombat",
+  :history => "Lincoln"
+}
+
+10. Create a hash called movies with symbols as keys and strings as values.
+
+Inside your hash, add two key/value pairs.
+
+The keys should be the names of movies.
+
+The values should be quick descriptions or reviews.
+
+Check out the Hint if you want an example to get you started!
+
+movies = {
+  :children => "Moana",
+  :scifi => "Mortal Kombat",
+  :history => "Lincoln"
+}
+
+11. Update your hash from the previous exercise to use the new 1.9 hash syntax instead of the older hash rocket syntax.
+
+movies = {
+  children: "Moana",
+  scifi: "Mortal Kombat",
+  history: "Lincoln"
+}
+
+12. Create a new variable, good_movies, and set it equal to the result of calling .select on movie_ratings, selecting only movies with a rating strictly greater than 3.
+
+movie_ratings = {
+  memento: 3,
+  primer: 3.5,
+  the_matrix: 5,
+  truman_show: 4,
+  red_dawn: 1.5,
+  skyfall: 4,
+  alex_cross: 2,
+  uhf: 1,
+  lion_king: 3.5
+}
+
+good_movies = movie_ratings.select { |name, rating| rating > 3 }
+
+13. Go ahead and print out just the titles of our movies using puts.
+
+movie_ratings = {
+  memento: 3,
+  primer: 3.5,
+  the_matrix: 3,
+  truman_show: 4,
+  red_dawn: 1.5,
+  skyfall: 4,
+  alex_cross: 2,
+  uhf: 1,
+  lion_king: 3.5
+}
+# Add your code below!
+
+movie_ratings.each_key { |title| puts title }
